@@ -1,0 +1,331 @@
+:root {
+    --text-color: rgb(245, 239, 255);
+    --solid-color: rgb(68, 68, 152);
+    --hover-color: #2764BA;
+    --body-color: #E0E0E0;
+    --box-color: white;
+  }
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Zolla';
+    src: url('fonts/Zolla.ttf') format('truetype'),
+         url('fonts/Zolla\ Outlined.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Intensa Fuente';
+    src: url('fonts/Intensa\ Fuente.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-image: url('./img/space-bg.jpg');
+    background-color: rgba(26, 26, 59, 0.618);
+    background-blend-mode: darken;
+    background-attachment: fixed;
+    background-size: contain;
+    font-family: 'Zolla', sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Intensa Fuente', sans-serif;
+    z-index: 2;
+    font-size: 5rem;
+}
+
+.navbar {
+    background-color: rgba(68, 68, 152, 0.674);
+    height: 10vh;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a:hover {
+    color:rgb(210, 190, 242);
+}
+
+.screen-1 {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: rgb(68, 68, 152); */
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.screen-1 img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 50vh;
+    width: 20vw;
+    animation-name: floating;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 0;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(calc(100vw - 20vw), 0) rotate(90deg);
+    }
+    50% {
+        transform: translate(calc(100vw - 20vw), calc(100vh - 50vh)) rotate(180deg);
+    }
+    75% {
+        transform: translate(0, calc(100vh - 50vh)) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+.screen-1 .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.button {
+    background-color: none;
+}
+
+h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#explore {
+    animation-name: bouncing;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bouncing {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 10px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
+.screen-2 {
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.intro {
+    margin: 0 auto;
+    width: 50vw;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    background-color: rgba(68, 68, 152, 0.747);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 5px solid gray;
+}
+
+#screen-2 {
+    height:7vh;
+    position: relative;
+    top: -7vh;
+    /* background-color: red; */
+}
+
+.screen-2 .skills img {
+    width: 15vw;
+    align-self: center;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+
+.skills {
+    margin-top: 15vh;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+    animation-name: bouncing;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.card {
+    align-items: center;
+    text-align: center;
+
+}
+
+.card img {
+    margin: auto;
+}
+
+
+.details {
+    text-align: center;
+    background-color: rgba(68, 68, 152, 0.747);
+    width: 15vw;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 5px solid gray;
+    margin-top: 2rem;
+    height: 1rem;
+    overflow: hidden;
+}
+
+ul li {
+    line-height: 1.5rem;
+    text-align: left;
+
+}
+
+.details:hover {
+    height: fit-content;
+
+}
+
+.screen-3 h2 {
+    text-align: center;
+    position: relative;
+    top: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 5px solid gray;
+    background-color: rgba(68, 68, 152, 0.747);
+}
+
+.screen-3 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.journey {
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    background-image: url('./img/Journey.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.screen-4 {
+    width: 100vw;
+    min-height: 100vh;
+}
+.screen-4 h2 {
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 5px solid gray;
+    background-color: rgba(68, 68, 152, 0.747);
+    text-align: center;
+    width: fit-content;
+}
+
+.project {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto 2rem auto;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 5px solid gray;
+    background-color: rgba(68, 68, 152, 0.747);
+}
+
+.project .desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:  3rem;
+}
+
+.project .desc-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.right-proj{
+    flex-direction: row;
+}
+
+.left-proj {
+    flex-direction: row-reverse;
+}
+
+.project img {
+    width: 40vw;
+    height: 40vh;
+}
+
+.project a {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--solid-color);
+    padding: 1rem;
+}
+
+.project a:hover {
+    background-color: var(--text-color);
+    color: var(--solid-color);
+}
+
+.screen-5 {
+    width: 100vw;
+    text-align: center;
+}
+.screen-5 h2 {
+margin: 6rem auto 2rem auto;
+padding: 1rem;
+border-radius: 1rem;
+border: 5px solid gray;
+background-color: rgba(68, 68, 152, 0.747);
+text-align: center;
+width: fit-content;
+}
+
+.screen-5 a{
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.screen-5 p {
+    margin-bottom: 3rem;
+}
