@@ -27,6 +27,7 @@ var chatHistory = document.getElementById('chat-history');
 
     fetch('https://personal-website-git-working-chatbot-chinchinjims-projects.vercel.app/chatbot_response?message=${encodeURIComponent(userInput)}')
         .then(console.log(response))
+        }
 
 function displayMessage(sender, message) {
     var chatHistory = document.getElementById('chat-history');
