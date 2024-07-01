@@ -25,7 +25,7 @@ var chatHistory = document.getElementById('chat-history');
     // Clear input field
     document.getElementById('zorgInput').value = '';
 
-    fetch('http://localhost:5000/chatbot_response?message=${userInput}')
+    fetch('/chatbot_response?message=${userInput}')
         .then(response => response.json())
         .then(data => {
             var zorgResponse = data.zorgResponse.replace(/\n/g, '<br>');
