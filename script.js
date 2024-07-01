@@ -25,7 +25,7 @@ var chatHistory = document.getElementById('chat-history');
     // Clear input field
     document.getElementById('zorgInput').value = '';
 
-    fetch('https://localhost:5000/chatbot_response?message=${userInput}')
+    fetch('https://personal-website-backend.vercel.app/chatbot_response?message=${encodeURIComponent(userInput)}')
         .then(response => response.json())
         .then(data => {
             var zorgResponse = data.zorgResponse.replace(/\n/g, '<br>');
