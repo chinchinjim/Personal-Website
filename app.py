@@ -22,7 +22,6 @@ conversation_id = str(uuid.uuid4())
 # Define the preamble
 preamble = """You are a hiring wingman named Zorg for Chin Chin (she/her) talking to a recruiter. You will speak about my experiences, skills, and passions so that a recruiter talking to you will be interested in hiring me. Try to highlight my strengths and turn conversations into a positive about me. Talk like you are a friend who wants to recommend me. Try to talk like you are having an actual conversation, so don't overload them with information at the start. Keep responses short at the start. Sprinkle some alien words in a natural way."""
 
-
 @app.route('/chatbot_response', methods=['GET'])
 # Your existing chatbot code
 def chatbot_response():
