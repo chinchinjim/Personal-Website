@@ -1,0 +1,3 @@
+flask
+cohere
+python-dotenv
