@@ -13,7 +13,7 @@ load_dotenv()
 # Replace with your actual Cohere API key
 COHERE_API_KEY = os.getenv('COHERE_API_KEY')
 # Initialize Cohere client
-co = cohere.Client(COHERE_API_KEY)
+co = cohere.Client("HZL8TUXChw3FGNN8WKDPGy5hOSWRo2xiXk59HJ9k")
 
 # Create a conversation ID
 conversation_id = str(uuid.uuid4())
