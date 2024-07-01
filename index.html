@@ -158,12 +158,22 @@
       <a href="https://github.com/chinchinjim"><p>GitHub: chinchinjim</p></a>
     </div>
 
-    <h1>Chat with the Chatbot</h1>
-    <div class="chatbox">
-      <div id="chat-history"></div>
-      <input id="zorgInput" type="text" placeholder="Talk to Zorg">
-      <button onclick="getZorgResponse()">Submit</button>
+    <div class="chatbox-section">
+      <img src="img/Zorg.png" id="zorg" alt="Zorg the alien"/>
+      <div class="chatbox" id="chatbox">
+        <div id="chat-history">
+          <div class="message zorg-message">Greetings human, I am Zorg, Chin Chin's hiring wingman here to answer any questions you may have about her. How may I assist you?</div>
+        </div>
+        <div class="user-input">
+            <input id="zorgInput" type="text" placeholder="Talk to Zorg">
+            <button onclick="getZorgResponse()">Submit</button>
+        </div>
+
+
+      </div>
     </div>
+
+
 
     <script src="script.js"></script>
   </body>

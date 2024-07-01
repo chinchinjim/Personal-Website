@@ -25,6 +25,13 @@ html {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Semi Coder';
+    src: url('fonts/Semi-Coder-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     color: var(--text-color);
     margin: 0;
@@ -34,13 +41,13 @@ body {
     background-blend-mode: darken;
     background-attachment: fixed;
     background-size: contain;
-    /*font-family: 'Zolla', sans-serif;sans-serif*/
+    font-family: 'Zolla', sans-serif;
     letter-spacing: 1px;
 }
 
 h1 {
     margin: 0;
-    /* font-family: 'Intensa Fuente', sans-serif;sans-serif; */
+    font-family: 'Intensa Fuente', sans-serif;
     z-index: 2;
     font-size: 5rem;
 }
@@ -346,21 +353,84 @@ width: fit-content;
 
 /* Chatbox */
 .chatbox {
-    width: 300px;
-    max-height: 400px; /* Adjust max height as needed */
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    width: 30vw;
+    max-height: 50vh; /* Adjust max height as needed */
+    background-color: var(--solid-color);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 5px solid gray;
+    background-color: rgba(68, 68, 152, 0.747);
     overflow-y: auto; /* Enable vertical scrollbar */
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    display: none;
+}
 
+.chatbox.open {
+    display: block;
+}
+.chatbox-section{
+display: flex;
+flex-direction: column;
+position: fixed;
+right: 1rem;
+    bottom: 1rem;
+    justify-items: right;
+    align-items: right;
+}
+#zorg {
+    cursor: pointer;
+    visibility: visible;
+    width: 5rem;
+    height: 10rem;
+    position: relative;
+    right: 0px;
+    align-self: right;
 }
 
 .message {
 color: var(--text-color);
+margin-bottom: 1rem;
+font-family: 'Semi Coder';
+}
+
+.zorg-message {
+float: left;
+background-color: var(--text-color);
+color: var(--solid-color);
+border: solid 3px green;
+border-radius: 1rem;
+padding: 0.25rem 0.5rem;
 
 }
+
+.user-message {
+float: right;
+width: fit-content;
+border-radius: 1rem;
+padding: 0.25rem 0.5rem;
+text-align: right;
+background-color: var(--text-color);
+color: var(--solid-color);
+border: solid 3px indigo;
+}
+
+.user-input {
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.user-input input {
+font-family: "Semi Coder";
+color: dark gray;
+font-size: 1rem;
+width: 80%;
+}
+
+.user-input button {
+font-family: "Semi Coder";
+color: var(--solid-color);
+cursor: pointer;
+width: 15%;
+}
+
+
