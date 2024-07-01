@@ -25,9 +25,9 @@ var chatHistory = document.getElementById('chat-history');
     // Clear input field
     document.getElementById('zorgInput').value = '';
 
-    //fetch('https://personal-website-git-working-chatbot-chinchinjims-projects.vercel.app/chatbot_response?message=${encodeURIComponent(userInput)}')
+    //fetch('http://localhost:5000/chatbot_response?message=${encodeURIComponent(userInput)}')
 
-    fetch('http://localhost:5000/chatbot_response?message=${encodeURIComponent(userInput)}')
+    fetch('https://personal-website-git-working-chatbot-chinchinjims-projects.vercel.app/chatbot_response?message=${encodeURIComponent(userInput)}')
        .then(response => response.json())
         .then(data => {
             var zorgResponse = data.zorgResponse.replace(/\n/g, '<br>');
