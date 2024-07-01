@@ -1,35 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const messagesDiv = document.getElementById('messages');
-    const input = document.getElementById('chat-input');
-    const sendButton = document.getElementById('send-button');
+function getZorgResponse() {
+    var userInput = document.getElementById('zorgInput').value;
 
-    // Display a welcome message from the chatbot
-    const welcomeMessage = "Hello! I'm Zorg, Chin Chin's hiring wingman. How can I assist you today?";
-    messagesDiv.innerHTML += `<div class="message bot-message">${welcomeMessage}</div>`;
+    displayMessage("You", userInput);
+    // Clear input field
+    document.getElementById('zorgInput').value = '';
 
-    sendButton.addEventListener('click', async () => {
-        const message = input.value;
-        if (!message) return;
-        input.value = '';
+    fetch(`http://localhost:5000/chatbot_response?message=${userInput}`)
+        .then(response => response.json())
+        .then(data => {
+            var zorgResponse = data.zorgResponse;
 
-        messagesDiv.innerHTML += `<div class="message user-message">${message}</div>`;
-        
-        // Fetch response from server
-        try {
-            const response = await fetch('/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message })
-            });
+            displayMessage("Zorg", zorgResponse);
+        })
+        .catch(error => console.error('Error:', error));}
 
-            const data = await response.json();
-            messagesDiv.innerHTML += `<div class="message bot-message">${data.message}</div>`;
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        } catch (error) {
-            console.error('Error:', error);
-            messagesDiv.innerHTML += `<div class="message bot-message">Error: ${error.message}</div>`;
-        }
-    });
-});
+    function displayMessage(sender, message) {
+        var chatHistory = document.getElementById('chat-history');
+
+        var messageElement = document.createElement('div');
+        messageElement.className = `message ${sender}-message`;
+        messageElement.textContent = message;
+        chatHistory.appendChild(messageElement);
+    }

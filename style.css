@@ -34,13 +34,13 @@ body {
     background-blend-mode: darken;
     background-attachment: fixed;
     background-size: contain;
-    font-family: 'Zolla', sans-serif;
+    /*font-family: 'Zolla', sans-serif;sans-serif*/
     letter-spacing: 1px;
 }
 
 h1 {
     margin: 0;
-    font-family: 'Intensa Fuente', sans-serif;
+    /* font-family: 'Intensa Fuente', sans-serif;sans-serif; */
     z-index: 2;
     font-size: 5rem;
 }
@@ -135,7 +135,7 @@ h2 a {
 @keyframes bouncing {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 10px); }
-    100%   { transform: translate(0, -0px); }    
+    100%   { transform: translate(0, -0px); }
 }
 
 .screen-2 {
@@ -336,62 +336,31 @@ width: fit-content;
 
 
 /* Chatbox styles */
-#chat-container {
+/* Chatbox container */
+.chatbox-container {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     right: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Chatbox */
+.chatbox {
     width: 300px;
-    background-color: #f1f1f1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#chat-box {
-    max-height: 300px;
-    overflow-y: auto;
+    max-height: 400px; /* Adjust max height as needed */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto; /* Enable vertical scrollbar */
     padding: 10px;
-}
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
 
-#messages {
-    display: flex;
-    flex-direction: column;
 }
 
 .message {
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    border-radius: 5px;
-}
+color: var(--text-color);
 
-.user-message {
-    align-self: flex-end;
-    background-color: #007bff;
-    color: #fff;
-}
-
-.bot-message {
-    align-self: flex-start;
-    background-color: #ddd;
-    color: #000;
-}
-
-#chat-input {
-    width: calc(100% - 60px);
-    padding: 10px;
-    border: none;
-    outline: none;
-}
-
-#send-button {
-    width: 50px;
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
-
-#send-button:hover {
-    background-color: #0056b3;
 }
