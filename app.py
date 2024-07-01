@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/chatbot_response": {"origins": "*"}})  # Allow all origins for this route
+CORS(app, resources={r"/chatbot_response": {"origins": "https://personal-website-pi-ten-38.vercel.app"}})
 load_dotenv()
 
 # Replace with your actual Cohere API key
