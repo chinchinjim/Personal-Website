@@ -15,6 +15,8 @@ COHERE_API_KEY = os.getenv('COHERE_API_KEY')
 # Initialize Cohere client
 co = cohere.Client(COHERE_API_KEY)
 
+print("Key successfully retrieved" + COHERE_API_KEY)
+
 # Create a conversation ID
 conversation_id = str(uuid.uuid4())
 
