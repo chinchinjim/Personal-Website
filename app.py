@@ -6,13 +6,10 @@ import os
 from dotenv import load_dotenv
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/chatbot_response": {"origins": "*"}})
 load_dotenv()
 
 COHERE_API_KEY = os.getenv('COHERE_API_KEY')
-# Replace with your actual Cohere API key
-if COHERE_API_KEY is None:
-    raise ValueError("COHERE_API_KEY environment variable not set")
 # Initialize Cohere client
 co = cohere.Client(COHERE_API_KEY)
 
