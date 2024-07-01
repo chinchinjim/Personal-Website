@@ -26,10 +26,10 @@ html {
 }
 
 @font-face {
-    font-family: 'VCR OSD MONO';
-    src: url('fonts/VCR_OSD_MONO.ttf') format('truetype');
+    font-family: 'Semi Coder';
+    src: url('fonts/Semi-Coder-Regular.otf') format('opentype');
     font-weight: normal;
-        font-style: normal;
+    font-style: normal;
 }
 
 body {
@@ -389,7 +389,7 @@ right: 1rem;
 .message {
 color: var(--text-color);
 margin-bottom: 1rem;
-font-family: 'VCR OSD MONO';
+font-family: 'Semi Coder';
 }
 
 .zorg-message {
@@ -413,21 +413,21 @@ color: var(--solid-color);
 border: solid 3px indigo;
 }
 
-.chatbox .user-input {
+.user-input {
 width: 100%;
 display: flex;
 justify-content: space-between;
 }
 
-.chatbox input {
-font-family: "VCR OSD MONO";
+.user-input input {
+font-family: "Semi Coder";
 color: dark gray;
 font-size: 1rem;
 width: 80%;
 }
 
-.chatbox button {
-font-family: "VCR OSD MONO";
+.user-input button {
+font-family: "Semi Coder";
 color: var(--solid-color);
 cursor: pointer;
 width: 15%;

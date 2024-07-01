@@ -17,11 +17,15 @@ var chatHistory = document.getElementById('chat-history');
     var userInput = document.getElementById('zorgInput').value;
 
     displayMessage("user", userInput);
+
+    if (userInput === '') {
+            return;  // Prevent empty input from being sent
+    }
     chatHistory.scrollTop = chatHistory.scrollHeight;
     // Clear input field
-        document.getElementById('zorgInput').value = '';
+    document.getElementById('zorgInput').value = '';
 
-    fetch(`http://localhost:5000/chatbot_response?message=${userInput}`)
+    fetch('http://localhost:5000/chatbot_response?message=${userInput}')
         .then(response => response.json())
         .then(data => {
             var zorgResponse = data.zorgResponse.replace(/\n/g, '<br>');

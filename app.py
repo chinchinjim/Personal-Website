@@ -29,7 +29,7 @@ def chatbot_response():
 
     # Typing "quit" ends the conversation
     if message.lower() == 'quit':
-        return("Thanks for chatting with Zorg! Hopefully I helped you learn a thing or two about Chin Chin. If you contact her, make sure to tell her Zorg says hi!")
+        return jsonify({'zorgResponse': "Thanks for chatting with Zorg! Hopefully I helped you learn a thing or two about Chin Chin. If you contact her, make sure to tell her Zorg says hi!"})
 
     # Chatbot response
     response = co.chat(message=message,
