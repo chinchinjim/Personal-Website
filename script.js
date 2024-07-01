@@ -26,13 +26,7 @@ var chatHistory = document.getElementById('chat-history');
     document.getElementById('zorgInput').value = '';
 
     fetch('https://personal-website-git-working-chatbot-chinchinjims-projects.vercel.app/chatbot_response?message=${encodeURIComponent(userInput)}')
-        .then(response => response.json())
-        .then(data => {
-            var zorgResponse = data.zorgResponse.replace(/\n/g, '<br>');
-            displayMessage("zorg", zorgResponse);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
-        })
-        .catch(error => console.error('Error:', error));}
+        .then(console.log(response))
 
 function displayMessage(sender, message) {
     var chatHistory = document.getElementById('chat-history');
