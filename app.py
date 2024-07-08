@@ -27,7 +27,7 @@ def chatbot_response():
         return jsonify({
                            'zorgResponse': "Thanks for chatting with Zorg! Hopefully I helped you learn a thing or two about Chin Chin. If you contact her, make sure to tell her Zorg says hi!"})
 
-    response = co.chat(message=message, model="command-r-plus", preamble=preamble,
+    response = co.chat(message=message, model="49a03990-369b-4da1-8857-28e1dd5a9b7d-ft", preamble=preamble,
                        conversation_id=conversation_id)
     return jsonify({'zorgResponse': response.text})
 
